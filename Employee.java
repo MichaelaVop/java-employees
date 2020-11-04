@@ -3,7 +3,7 @@ package ca.employee.system;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Employee {
+public abstract class Employee {
 	
 	public String firstName;
 	private String lastName;
@@ -12,7 +12,7 @@ public class Employee {
 	private LocalDate dayStarted;
 	public final String DEFAULT_STRING = "Unknown";
 
-	public Employee (String firstName, String lastName, String email, String phoneNume, LocalDate dayStarted) {
+	public Employee (String firstName, String lastName, String email, String phoneNum, LocalDate dayStarted) {
 		setFirstName(firstName);
 		setLastName(lastName);
 		setEmail(email);
@@ -90,10 +90,10 @@ public class Employee {
 	
 	@Override
 	public String toString() {
-		return "Employee name: " + getFirstName() + " " + getLastName() 
-				+ "\nphone number: " + getPhoneNum()
-				+ "\nEmail: " + getEmail()
-				+ "\nThe day started: " + getDayStarted();
+		return "Employee name: " + firstName + " " + lastName
+				+ "\nphone number: " + phoneNum
+				+ "\nEmail: " + email
+				+ "\nThe day started: " + dayStarted;
 	}
 	
 

@@ -2,17 +2,16 @@ package ca.employee.system;
 
 import java.time.LocalDate;
 
-public class SalesEmployee {
+public class SalesEmployee extends Employee {
 	
 	private double commitionRate;
 	private double totalSales;
 	
-	public SalesEmployee(String firstName, String lastName, String email, String phoneNum, String dayStarted,
-			double commitionRate, double totalSales) {
+	public SalesEmployee (String firstName, String lastName, String email, String phoneNum, LocalDate dayStarted, double commitionRate, double totalSales) {
 		
-		super(firstName, lastName, phoneNum, email, dayStarted);
+		super(firstName, lastName, email, phoneNum, dayStarted);
 		setCommitionRate(commitionRate);
-		setTotalSales(totalSales)
+		setTotalSales(totalSales);
 		
 	}
 	

@@ -2,7 +2,7 @@ package ca.employee.system;
 
 import java.time.LocalDate;
 
-public class HourlyEmployee {
+public class HourlyEmployee extends Employee {
 	
 	private double payRate;
 	private double hoursWorked;
@@ -11,14 +11,10 @@ public class HourlyEmployee {
 	public HourlyEmployee(String firstName, String lastName, String email,  String phoneNum, LocalDate dayStarted,
 			double payRate, double hoursWorked) {
 			
-		super();
+		super(firstName, lastName, email, phoneNum, dayStarted);
 		setPayRate(payRate);
 		setHoursWorked(hoursWorked);
 		
-	}
-	
-	public double incomeAmount() {
-		return payRate * hoursWorked;
 	}
 	
 	public double getPayRate() {
@@ -45,12 +41,19 @@ public class HourlyEmployee {
 		}
 	}
 	
+	
+	public double incomeAmount() {
+		return payRate * hoursWorked;
+	}
+	
+	
+	
 	@Override
 	public String toString() {
-		return String.format(super.toString()
-				+ "\nPay rate: " + getPayRate()
-				+ "\nHours worked: " + getHoursWorked()
-				+ "\nTotal income: " + incomeAmount());
+		return super.toString()
+				+ "\nPay rate: " + payRate
+				+ "\nHours worked: " + hoursWorked
+				+ "\nTotal income: " + incomeAmount();
 	}
 		
 
